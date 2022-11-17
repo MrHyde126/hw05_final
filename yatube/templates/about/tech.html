@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Технологии
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <h1>Что я изучаю</h1>
+    <aside class="col-12 col-md-3">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <a href="https://www.python.org/" target="_blank" class="link-dark text-decoration-none">
+            <img src="{% static 'img/python_icon.svg' %}" height="35px" alt="Python_icon"> Python
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.djangoproject.com/" target="_blank" class="link-dark text-decoration-none">
+            <img src="{% static 'img/django_icon.svg' %}" height="35px" alt="Django_icon"> Django
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.w3schools.com/sql/" target="_blank" class="link-dark text-decoration-none">
+            <img src="{% static 'img/sql_icon.svg' %}" height="35px" alt="SQL_icon"> SQL
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.w3schools.com/html/" target="_blank" class="link-dark text-decoration-none">
+            <img src="{% static 'img/html_icon.svg' %}" height="35px" alt="HTML_icon"> HTML
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://getbootstrap.com/" target="_blank" class="link-dark text-decoration-none">
+            <img src="{% static 'img/bootstrap_icon.svg' %}" height="35px" alt="Bootstrap_icon"> Bootstrap
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.w3schools.com/css/" target="_blank" class="link-dark text-decoration-none">
+            <img src="{% static 'img/css_icon.svg' %}" height="35px" alt="CSS_icon"> CSS
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.w3schools.com/js/" target="_blank" class="link-dark text-decoration-none">
+            <img src="{% static 'img/javascript_icon.svg' %}" height="35px" alt="JavaScript_icon"> JavaScript
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://v3.ru.vuejs.org/" target="_blank" class="link-dark text-decoration-none">
+            <img src="{% static 'img/vue_icon.svg' %}" height="35px" alt="Vue.js_icon"> Vue.js
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <article class="col-12 col-md-9">
+      <p>Для создания этого сайта я применил <b><i>Python 3.7.9</i></b>,
+         фреймворк <b><i>Django 2.2.9</i></b>, <b><i>HTML5</i></b>
+          и фреймворк <b><i>Bootstrap 5.2.2</i></b></p>
+      <hr>
+      <p>В работе мне помогли навыки использования ООП, основы Django и Bootstrap.<br>
+        В своем обучении я вижу хороший прогресс, но еще очень многое предстоит освоить.</p>
+      <hr>
+      <figure>
+        <blockquote class="blockquote">
+          <p>Достигни того, чего хочешь, или придется довольствоваться тем, что имеешь.</p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+          Джордж Бернард Шоу
+        </figcaption>
+      </figure>
+    </article>
+  </div>
+{% endblock %}

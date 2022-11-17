@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Подписки
+{% endblock %}
+
+{% block content %}
+  {% include 'includes/switcher.html' with follow=True %}
+  {% for post in page_obj %}
+    {% include 'includes/article.html' with show_group_link=True %}
+    {% if not forloop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+  {% include 'includes/paginator.html' %}
+{% endblock %}

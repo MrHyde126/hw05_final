@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Об авторе проекта
+{% endblock %}
+
+{% block content %}
+  <h1>Привет. Меня зовут Игорь Зацарин</h1>
+  <h5>Я студент 50 когорты Яндекс.Практикума факультета Бэкенд</h5>
+  <hr>
+  <p class="lead">
+    Ссылки на мои аккаунты в сети:
+      <ul>
+        <li><i class="fa-brands fa-github pe-2"></i><a href="https://github.com/MrHyde126" target="_blank">GitHub</a></li>
+        <li><i class="fa-brands fa-stack-overflow pe-2"></i>
+          <a href="https://stackoverflow.com/users/16426004/mr-hyde" target="_blank">Stack Overflow</a>
+        </li>
+        <li><i class="fa-brands fa-imdb pe-2"></i><a href="https://www.imdb.com/user/ur20585217" target="_blank">IMDb</a></li>
+        <li><i class="fa-brands fa-steam pe-2"></i><a href="https://steamcommunity.com/id/mrhyde26/" target="_blank">Steam</a></li>
+      </ul>
+  </p>
+  <hr>
+  <p class="lead">Как я пришел в мир программирования</p>
+  <p>
+    Я давно хотел заняться программированием, но постоянно что-то мешало.
+    Около года назад начал читать книги по программированию,
+    смотреть обучающие видео. И вот наконец решился записаться 
+    на курсы по изучению Python.
+  </p>
+  <hr>
+  <div class="card mb-3">
+    <img src="{% static 'img/desk.jpg' %}" class="card-img-top" alt="desk_photo">
+    <div class="card-body">
+      <h5 class="card-title">Рабочее место</h5>
+      <p class="card-text">Это мое рабочее место. Здесь я:
+        <ul>
+          <li><i class="fa-solid fa-code"></i> учусь программированию,</li>
+          <li><i class="fa-solid fa-film"></i> смотрю фильмы,</li>
+          <li><i class="fa-solid fa-gamepad"></i> играю в компьютерные игры.</li>
+      </p>
+    </div>
+  </div>
+{% endblock %}
