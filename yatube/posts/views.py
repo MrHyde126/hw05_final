@@ -13,7 +13,7 @@ def index(request):
     template = 'posts/index.html'
     post_list = Post.objects.select_related('group', 'author')
     page_obj = pagination(request, post_list, settings.POSTS_PER_PAGE)
-    context = {'page_obj': page_obj}
+    context = {'page_obj': page_obj, 'index': True}
     return render(request, template, context)
 
 
@@ -112,7 +112,7 @@ def follow_index(request):
     authors = User.objects.filter(following__in=request.user.follower.all())
     post_list = Post.objects.filter(author__in=authors)
     page_obj = pagination(request, post_list, settings.POSTS_PER_PAGE)
-    context = {'page_obj': page_obj}
+    context = {'page_obj': page_obj, 'follow': True}
     return render(request, template, context)
 
 

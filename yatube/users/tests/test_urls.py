@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase, Client
 from http import HTTPStatus
 
+
 User = get_user_model()
 
 

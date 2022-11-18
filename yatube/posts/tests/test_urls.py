@@ -4,6 +4,7 @@ from http import HTTPStatus
 
 from posts.models import Group, Post
 
+
 User = get_user_model()
 
 
