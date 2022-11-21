@@ -27,5 +27,10 @@
         {{ comment.text }}
       </p>
     </div>
+    {% if comment.author == user %}
+      <a class="link-danger" href="{% url 'posts:comment_delete' post.pk comment.pk %}">
+        удалить комментарий
+      </a>
+    {% endif %}
   </div>
 {% endfor %}

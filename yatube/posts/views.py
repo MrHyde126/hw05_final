@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.cache import cache_page
 
 from .forms import CommentForm, PostForm
-from .models import Follow, Group, Post, User
+from .models import Comment, Follow, Group, Post, User
 from .utils import pagination
 
 
@@ -124,6 +124,14 @@ def add_comment(request, post_id):
         comment.post = post
         comment.save()
     return redirect('posts:post_detail', post_id=post_id)
+
+
+@login_required
+def comment_delete(request, post_id, comment_id):
+    comment = Comment.objects.get(pk=comment_id)
+    if comment.author == request.user:
+        comment.delete()
+    return redirect('posts:post_detail', post_id)
 
 
 @login_required
