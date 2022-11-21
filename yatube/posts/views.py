@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
+from django.core.cache import cache
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.cache import cache_page
 
@@ -92,6 +93,25 @@ def post_edit(request, post_id):
         'post': post,
     }
     return render(request, template, context)
+
+
+@login_required
+def post_delete(request, post_id):
+    template = 'posts/post_delete.html'
+    post = get_object_or_404(Post, pk=post_id)
+    context = {'post': post}
+    if post.author == request.user:
+        return render(request, template, context)
+    return redirect('posts:post_detail', post_id)
+
+
+@login_required
+def post_delete_confirm(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    if post.author == request.user:
+        post.delete()
+    cache.clear()
+    return redirect('posts:index')
 
 
 @login_required

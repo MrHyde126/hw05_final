@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Удаление поста
+{% endblock %}
+
+{% block content %}
+  <h3>Это действие необратимо!</h3>
+  <p>Вы уверены, что хотите удалить пост "{{ post }}" ?</p>
+  <a class="btn btn-danger" href="{% url 'posts:post_delete_confirm' post.pk %}">
+    Да
+  </a>
+  <a class="btn btn-success" href="{% url 'posts:post_detail' post.pk %}">
+    Нет
+  </a>
+{% endblock %}
